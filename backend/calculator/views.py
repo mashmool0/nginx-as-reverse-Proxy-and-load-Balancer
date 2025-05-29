@@ -5,6 +5,8 @@ def hello_world(request):
 
 @csrf_exempt
 def calculate_sum(request):
+    if request.method == "GET" : 
+        return JsonResponse({"res":10})
     if request.method == 'POST':
         try:
             num1 = float(request.POST.get('num1', 0))
@@ -14,3 +16,5 @@ def calculate_sum(request):
         except ValueError:
             return JsonResponse({'error': 'Invalid input'}, status=400)
     return JsonResponse({'error': 'Method not allowed'}, status=405)
+
+        
