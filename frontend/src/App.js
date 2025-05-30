@@ -9,7 +9,7 @@ function App() {
 
   const fetchHelloWorld = async () => {
     try {
-      const response = await fetch("http://localhost/api/hello/");
+      const response = await fetch("https://localhost/api/hello/");
       const data = await response.json();
       setMessage(data.message);
     } catch (error) {
@@ -23,7 +23,7 @@ function App() {
     formData.append("num2", num2);
 
     try {
-      const response = await fetch("http://localhost/api/calculate/", {
+      const response = await fetch("https://localhost/api/calculate/", {
         method: "POST",
         body: formData,
       });
