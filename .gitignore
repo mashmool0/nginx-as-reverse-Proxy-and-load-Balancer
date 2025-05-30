@@ -1,2 +1,5 @@
 *venv*
 *node_moduls*
+db
+db.sqlite3
+
